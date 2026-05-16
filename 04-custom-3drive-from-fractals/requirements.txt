@@ -1,0 +1,3 @@
+python-dotenv>=1.0
+# Локальная установка SDK из репо (editable). На проде/CI поменяй на pin.
+-e ../../sdks/python

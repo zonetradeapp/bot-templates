@@ -1,0 +1,2 @@
+zonetrade-sdk>=0.1.0
+redis>=5.0,<6
