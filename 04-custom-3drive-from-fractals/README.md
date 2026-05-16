@@ -35,7 +35,7 @@ Snapshot-then-stream — стандартный паттерн (Binance, Bybit �
 ```bash
 pip install -r requirements.txt
 cp .env.example .env  # заполни ZT_API_KEY
-python3.10 bot.py
+python bot.py
 ```
 
 ## Конфигурация (.env)

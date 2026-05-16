@@ -64,7 +64,7 @@ ZT_TF=1m                                             # candle/fractal timeframe
 ## Step 4 — run it
 
 ```bash
-python3.10 bot.py
+python bot.py
 ```
 
 Expected log output:
