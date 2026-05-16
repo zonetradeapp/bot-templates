@@ -14,6 +14,7 @@ and you're on the WS stream.
 | 02 | [`multi-symbol-aggregator`](./02-multi-symbol-aggregator) | intermediate | Listens to 5+ symbols in parallel and aggregates events into Redis. A pattern for dashboards and alerting. |
 | 03 | [`auto-trader`](./03-auto-trader) ⭐ | intermediate | Signal → paper-order on the Zonetrade virtual exchange → fill/PnL pushed back. **Recommended starting point** — no real-money risk. |
 | 04 | [`custom-3drive-from-fractals`](./04-custom-3drive-from-fractals) | advanced | Build your own 3-drive detector on top of the `structure-snapshot` + fractal stream. An example of how to derive custom signals from base events. |
+| 05 | [`indicator-plugin-demo`](./05-indicator-plugin-demo) | intermediate | Bot as an indicator: uses the official `FractalsPlugin` to draw HH/HL/LH/LL markers onto your own chart. Reference for writing your own visual plugin. |
 
 ## Quickstart
 
