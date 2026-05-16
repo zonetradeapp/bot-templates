@@ -1,6 +1,6 @@
 # 05 — Indicator Plugin demo (draw on the chart from a bot)
 
-Run this bot on your laptop → see **SMC fractal markers appear on your chart at zonetrade.app** (HH/HL/LH/LL/SH/SL). The bot doesn't trade — it **draws**.
+Run this bot on your laptop → see **SMC fractal markers appear on your chart at [zonetrade.app](https://zonetrade.app)** (HH/HL/LH/LL/SH/SL). The bot doesn't trade — it **draws**.
 
 This is the "bot as indicator" pattern: your Python code computes something (fractals, FVG, order blocks, patterns) and uses the SDK to **publish visual primitives onto your own chart**. No frontend code — Python only.
 
@@ -80,7 +80,7 @@ The bot keeps running until you press Ctrl+C.
 
 ## Step 5 — open the chart in your browser
 
-1. Open [zonetrade.app/chart](https://zonetrade.app/chart) **logged into the same account**
+1. Open [zonetrade.app](https://zonetrade.app) **logged into the same account**
 2. Switch to one of the pairs the bot is watching (e.g. BTCUSDT)
 3. Set the timeframe to `1m` (or whatever you set in `ZT_TF`)
 4. You'll see **markers** labelled HH/HL/LH/LL/SH/SL — those are your fractals, painted by the bot
