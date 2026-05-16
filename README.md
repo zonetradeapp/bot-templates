@@ -1,54 +1,45 @@
 # Zonetrade Bot Templates
 
-Готовые Python-боты на базе [`zonetrade-sdk`](https://github.com/zonetradeapp/zonetrade-sdk):
-паттерны от простого «print all events» до custom-детектора и paper-trading'a.
-Цель — `git clone`, заполнить `.env`, `python bot.py` — и ты в WS-стриме.
+Ready-to-run Python bots built on top of
+[`zonetrade-sdk`](https://github.com/zonetradeapp/zonetrade-sdk):
+patterns from a minimal "print all events" up to a custom detector and
+paper trading. The goal — `git clone`, fill `.env`, `python bot.py` —
+and you're on the WS stream.
 
-## Шаблоны
+## Templates
 
-| # | Имя | Сложность | Что показывает |
-|---|-----|-----------|----------------|
-| 01 | [`print-events`](./01-print-events) | beginner | Минимальный bot: коннект к WS → печать каждого события. Для debug + знакомства с потоком. |
-| 02 | [`multi-symbol-aggregator`](./02-multi-symbol-aggregator) | intermediate | Слушает 5+ символов параллельно, агрегирует события в Redis. Шаблон под dashboard'ы и alerting. |
-| 03 | [`auto-trader`](./03-auto-trader) ⭐ | intermediate | Сигнал → paper-ордер на виртуальной бирже Zonetrade → fill/PnL обратно. **Рекомендован для старта** — без риска реальных денег. |
-| 04 | [`custom-3drive-from-fractals`](./04-custom-3drive-from-fractals) | advanced | Свой 3-drive детектор поверх `structure-snapshot` + fractal-стрима. Пример того, как строить кастомные сигналы из base-event'ов. |
+| # | Name | Level | What it shows |
+|---|------|-------|---------------|
+| 01 | [`print-events`](./01-print-events) | beginner | Minimal bot: connect to WS → print every event. For debugging and getting familiar with the stream. |
+| 02 | [`multi-symbol-aggregator`](./02-multi-symbol-aggregator) | intermediate | Listens to 5+ symbols in parallel and aggregates events into Redis. A pattern for dashboards and alerting. |
+| 03 | [`auto-trader`](./03-auto-trader) ⭐ | intermediate | Signal → paper-order on the Zonetrade virtual exchange → fill/PnL pushed back. **Recommended starting point** — no real-money risk. |
+| 04 | [`custom-3drive-from-fractals`](./04-custom-3drive-from-fractals) | advanced | Build your own 3-drive detector on top of the `structure-snapshot` + fractal stream. An example of how to derive custom signals from base events. |
 
 ## Quickstart
 
 ```bash
-# 1. Установи SDK
+# 1. Install the SDK
 pip install git+https://github.com/zonetradeapp/zonetrade-sdk
 
-# 2. Клонируй templates
+# 2. Clone the templates
 git clone https://github.com/zonetradeapp/bot-templates
 cd bot-templates/03-auto-trader
 
-# 3. Заполни .env (API-ключ берёшь на https://zonetrade.app/integration/api-keys)
+# 3. Fill in .env (grab the API key at https://zonetrade.app/integration/api-keys)
 cp .env.example .env
 $EDITOR .env
 
-# 4. Запусти
+# 4. Run
 pip install -r requirements.txt
 python bot.py
 ```
 
-## Tier-доступ
-
-Каждый шаблон работает на определённых WS-каналах. Они открываются по
-tier-подписке (см. `https://zonetrade.app/integration/pricing`):
-
-| Tier | Что доступно |
-|------|--------------|
-| **Free** | 3-drive без HTF фильтра, 1m. Базовый стрим (`bar.*`, `zone.*`, `structure.*`). |
-| **Starter** | + 3-drive с HTF фильтром, + структурный поток (FVG, OB, CHoCH, BoS, fractals). |
-| **Pro** | + Trap-Flip премиум-сигналы. |
-
 ## SDK + reference
 
 - SDK: <https://github.com/zonetradeapp/zonetrade-sdk>
-- AI-агент гайд (для Claude/Cursor): [`claude.md`](https://github.com/zonetradeapp/zonetrade-sdk/blob/main/claude.md)
+- AI-agent guide (Claude / Cursor): [`claude.md`](https://github.com/zonetradeapp/zonetrade-sdk/blob/main/claude.md)
 - Pricing: <https://zonetrade.app/integration/pricing>
 
 ## License
 
-MIT (см. [LICENSE](./LICENSE))
+MIT (see [LICENSE](./LICENSE))
